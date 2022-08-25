@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade Counter</title>
+
+	<style>
+		*{
+			box-sizing: border-box;
+			font-family: verdana;
+		}
+		
+		table{
+			width: 60%;
+			height: 50px;
+			/*border: 1px solid black;*/
+			padding: 5px;
+			border-collapse: collapse;
+			margin: auto;
+
+		}
+
+		th {
+			border: 1px solid black;
+			background: #455;
+			color:#EEE;
+			padding: 15px;
+		}
+
+		td {
+			border: 1px solid black;
+			/*padding: 15px;*/
+			/*background: #666;*/
+			color: #777;
+			text-align: center;
+
+		}
+
+		input {
+			width: 100%;
+			height: 100%;
+			padding: 15px;
+			border: none;
+			text-align: center;
+		}
+
+		button{
+			padding: 5px 25px;
+			background: green;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Students grade counter</h1>
+
+<form onsubmit = "return gpaCalc()" action="" method="post" name="">
+
+	<table>
+		<caption>GPA Calculator</caption>
+
+		<tr>
+			<th>Courses</th>
+			<th>Units</th>
+			<th>Score</th>
+			<th>Grade</th>
+			<th>Unit Point</th>
+		</tr>
+
+		<tr>
+
+			<td>Maths</td>
+
+			<td id="unitMath">3</td>
+
+			<td >
+				<input id="mathScore" type="number" name="" min="0" max="100"  >
+			</td>
+
+			<td id="grade1">
+				
+			</td>
+
+			<td id="mathUnit">
+				
+			</td>
+
+		</tr>
+
+		<tr>
+			<td>English</td>
+
+			<td id="unitEng">3</td>
+
+			<td>
+				<input id="engScore" type="number" name="" min="0" max="100" >
+			</td>
+
+			<td id="engGrade"></td>
+			<td id="engUnit"></td>
+		</tr>
+
+		<tr>
+
+			<td>Biology</td>
+
+			<td id="unitBio">2</td>
+
+			<td>
+				<input id="bioScore" type="number" name="" min="0" max="100" >
+			</td>
+
+			<td id="bioGrade"></td>
+
+			<td id="bioUnit"></td>
+
+		</tr>
+
+		<tr>
+
+			<td>Chemistry</td>
+
+			<td id="unitChem">2</td>
+
+			<td>
+				<input id="chemScore" type="number" name=""  min="0" max="100" >
+			</td>
+
+			<td id="chemGrade"></td>
+
+			<td id="chemUnit"></td>
+
+		</tr>
+
+		<tr>
+
+			<td>Physics</td>
+
+			<td id="unitPhy">2</td>
+
+			<td>
+				<input id="phyScore" type="number" name="" min="0" max="100">
+			</td>
+
+			<td id="phyGrade"></td>
+
+			<td id="phyUnit"></td>
+
+		</tr>
+
+		<tr>
+			<td id="btnCell">
+				<button  id="gpabutton" type="submit" >GPA</button>
+			</td>
+
+			<td id="gpaScore"></td>
+		</tr>
+	</table>
+<form>
+	<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</htm
