@@ -5,6 +5,9 @@ const Score_Math = document.querySelector('#mathScore');
 var gradeM = document.querySelector("#grade1");
 const unit_Math = document.querySelector('#mathUnit');
 
+UIbtn = document.querySelector('#btnCell');
+UIresult = document.querySelector('#gpaScore');
+
 // 3 credit unit points
 const Cred_3unitPointA =  3 * 5, Cred_3unitPointB =  3 * 4, Cred_3unitPointC = 3 * 3  , Cred_3unitPointD = 3 * 2 , Cred_3unitPointE = 3 * 1, Cred_3unitPointF = 3 * 0 ;
 
@@ -301,30 +304,31 @@ scorerPhy.addEventListener('blur', function(){
 // GPA CALCULATOR
 
 // credit unit
-const mathUnix = parseInt(document.querySelector('#unitMath').innerText);
-const engUnix = parseInt(document.querySelector('#unitEng').innerText) ;
-const bioUnix = parseInt(document.querySelector('#unitBio').innerText) ;
-const chemUnix = parseInt(document.querySelector('#unitChem').innerText) ;
-const phyUnix = parseInt(document.querySelector('#unitPhy').innerText) ;
 
-let credUnit_Sum = parseInt(mathUnix + engUnix + bioUnix +chemUnix + phyUnix );
-
-// grade unit point
-let mathPoint = parseInt(document.querySelector('#mathUnit').value);
-let engPoint = parseInt(document.querySelector('#engUnit').value);
-let bioPoint = parseInt(document.querySelector('#bioUnit').value);
-let chemPoint = parseInt(document.querySelector('#chemUnit').value);
-let phyPoint = parseInt(document.querySelector('#phyUnit').value);
-
-let unitPoint_Sum = parseInt( mathPoint + engPoint + bioPoint + chemPoint + phyPoint );
 
 
 
-let gpa = (unitPoint_Sum / credUnit_Sum);
+// grade unit point
+UIbtn.addEventListener('click', function gpaCalc(){
 
-console.log(typeof(unitPoint_Sum));
+	let mathPoint = parseInt(document.querySelector('#mathUnit').textContent);
+	let engPoint = parseInt(document.querySelector('#engUnit').textContent);
+	let bioPoint = parseInt(document.querySelector('#bioUnit').textContent);
+	let chemPoint = parseInt(document.querySelector('#chemUnit').textContent);
+	let phyPoint = parseInt(document.querySelector('#phyUnit').textContent);
 
-function gpaCalc(){
-	let	gpaOut = document.getElementById('gpaScore').innerText = gpa;
-	return false;
-}
+	
+
+	const mathUnix = parseInt(document.querySelector('#unitMath').innerText);
+	const engUnix = parseInt(document.querySelector('#unitEng').innerText) ;
+	const bioUnix = parseInt(document.querySelector('#unitBio').innerText) ;
+	const chemUnix = parseInt(document.querySelector('#unitChem').innerText) ;
+	const phyUnix = parseInt(document.querySelector('#unitPhy').innerText) ;
+
+	let unitPoint_Sum = parseInt( mathPoint + engPoint + bioPoint + chemPoint + phyPoint );
+	let credUnit_Sum = parseInt(mathUnix + engUnix + bioUnix +chemUnix + phyUnix );
+
+	let gpa = (unitPoint_Sum / credUnit_Sum).toFixed(2);
+
+	UIresult.innerText = gpa;
+})
